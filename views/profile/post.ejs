@@ -1,0 +1,52 @@
+<% layout('layouts/boilerplate') -%>
+<div class="container">
+    <h2 class="my-4">
+        Create New Post
+    </h2>
+    <form class="row g-3 needs-validation" action="/post/new" method="POST" novalidate>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Tittle</label>
+          <input type="text" class="form-control" id="inputTitle" placeholder="enter tittle" name="title" required>
+          <div class="invalid-feedback">
+            Please enter the title.
+          </div>
+        </div>
+        <div class="col-md-3">
+            <label for="inputState" class="form-label">Post Name</label>
+            <select id="inputPostname" class="form-select" name="Post_name" required>
+              <option selected>Choose...</option>
+              <option>World</option>
+              <option>India</option>
+              <option>Technology</option>
+              <option>Design</option>
+              <option>Culture</option>
+              <option>Business</option>
+              <option>Politics</option>
+              <option>Science</option>
+              <option>Health</option>
+            </select>
+            <div class="invalid-feedback">
+              Please enter the post name.
+            </div>
+          </div>
+        <div class="col-7">
+          <label for="inputAddress" class="form-label"> Upload Image</label>
+          <input type="text" class="form-control" id="inputimage" placeholder="Give URL OF IMAGE" name="image" required>
+          <div class="invalid-feedback">
+            Please enter the Image URL.
+          </div>
+        </div>
+        <div class="form-floating col-7">
+            <textarea class="form-control" placeholder="enter Description" id="floatingTextarea" rows="10" name="description" required></textarea>
+            <label for="floatingTextarea"> enter Description</label>
+            <div class="invalid-feedback">
+              Please enter the short discription.
+            </div>
+          </div>
+        
+       
+        <div class="col-12">
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </div>
+      </form>
+</div>

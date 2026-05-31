@@ -1,0 +1,55 @@
+<% layout('layouts/boilerplate') -%>
+<div class="container">
+    <h2 class="my-4">
+        Edit Post
+    </h2>
+    <form class="row g-3" action="/post/<%= post._id %>/update?_method=PUT" method="POST">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Title</label>
+          <input type="text" class="form-control" value="<%= post.title %>" id="inputTitle" placeholder="enter tittle" name="title">
+        </div>
+        <div class="col-md-3">
+            <label for="inputState" class="form-label">Post Name</label>
+            <!-- <select id="inputPostname" class="form-select"  name="Post_name">
+              <option selected value=""></option>
+              <option>World</option>
+              <option>India</option>
+              <option>Technology</option>
+              <option>Design</option>
+              <option>Culture</option>
+              <option>Business</option>
+              <option>Politics</option>
+              <option>Science</option>
+              <option>Health</option>
+            </select> -->
+            <select name="Post_name" class="form-select" >
+
+                <option <%= post.Post_name === "World" ? "selected" : "" %>>World</option>
+                
+                <option <%= post.Post_name === "India" ? "selected" : "" %>>India</option>
+                
+                <option <%= post.Post_name === "Design" ? "selected" : "" %>>Design</option>
+                <option <%= post.Post_name === "Culture" ? "selected" : "" %>>Culture</option>
+                <option <%= post.Post_name === "Business" ? "selected" : "" %>>Business</option>
+                <option <%= post.Post_name === "Politics" ? "selected" : "" %>>Politics</option>
+                <option <%= post.Post_name === "Science" ? "selected" : "" %>>Science</option>
+                <option <%= post.Post_name === "Technology" ? "selected" : "" %>>Technology</option>
+                <option <%= post.Post_name === "Health" ? "selected" : "" %>>Health</option>
+                
+                </select>
+          </div>
+        <div class="col-7">
+          <label for="inputAddress" class="form-label"> Upload Image</label>
+          <input type="text" class="form-control" id="inputimage" value="<%= post.image.url %>" placeholder="Give URL OF IMAGE" name="image">
+        </div>
+        <div class="form-floating col-7">
+            <textarea class="form-control" placeholder="enter Description" id="floatingTextarea" rows="10"  name="description"><%= post.description %></textarea>
+            <label for="floatingTextarea"> enter Description</label>
+          </div>
+        
+       
+        <div class="col-12">
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </div>
+      </form>
+</div>
