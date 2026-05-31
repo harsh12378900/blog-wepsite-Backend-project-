@@ -78,6 +78,9 @@ passport.deserializeUser(User.deserializeUser());
 app.use("/",postRoute);
 app.use("/",userRoute);
 
+app.get("/", (req, res) => {
+  res.redirect("/profile");
+});
 
 
 
